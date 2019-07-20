@@ -52,6 +52,10 @@ LOCAL_CFLAGS := \
 	-DLOG_TAG=\"libva\" \
 	-DANDROID_ALOG
 
+ifeq ($(ASUS_ZENFONE2_LP_BLOBS),true)
+LOCAL_CFLAGS += -DASUS_ZENFONE2_LP_BLOBS
+endif	
+
 LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/.. $(generated_sources_dir)
 
 LOCAL_C_INCLUDES := \
@@ -107,6 +111,10 @@ LOCAL_SRC_FILES := \
 LOCAL_CFLAGS := \
 	-DANDROID -DLOG_TAG=\"libva-android\"
 
+ifeq ($(ASUS_ZENFONE2_LP_BLOBS),true)
+LOCAL_CFLAGS += -DASUS_ZENFONE2_LP_BLOBS
+endif
+
 LOCAL_CLANG_CFLAGS += -Wno-missing-field-initializers
 
 LOCAL_C_INCLUDES := \
@@ -137,6 +145,10 @@ LOCAL_SRC_FILES := \
 LOCAL_CFLAGS := \
 	-DANDROID -DLOG_TAG=\"libva-egl\"
 
+ifeq ($(ASUS_ZENFONE2_LP_BLOBS),true)
+LOCAL_CFLAGS += -DASUS_ZENFONE2_LP_BLOBS
+endif
+
 LOCAL_C_INCLUDES := \
 	$(TARGET_OUT_HEADERS)/libva \
 	$(LOCAL_PATH)/x11
@@ -163,6 +175,10 @@ LOCAL_CLANG_CFLAGS += -Wno-missing-field-initializers
 LOCAL_SRC_FILES := va_tpi.c
 
 LOCAL_CFLAGS := -DANDROID -DLOG_TAG=\"libva-tpi\"
+
+ifeq ($(ASUS_ZENFONE2_LP_BLOBS),true)
+LOCAL_CFLAGS += -DASUS_ZENFONE2_LP_BLOBS
+endif
 
 LOCAL_C_INCLUDES := \
 	$(TARGET_OUT_HEADERS)/libva \
